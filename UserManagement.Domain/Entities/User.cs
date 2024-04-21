@@ -1,11 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using CommunityToolkit.Diagnostics;
 
 namespace UserManagement.Domain.Entities;
 
 /// <summary>
-/// Represents a user entity with properties such as name, last name, email, and DNI (Documento Nacional de Identidad).
+/// Represents a user entity with properties such as name, last name, email, and DNI (National Identity Document).
 /// </summary>
 public class User
 {
@@ -60,7 +59,7 @@ public class User
     }
 
     /// <summary>
-    /// Gets or sets the DNI (Documento Nacional de Identidad) of the user.
+    /// Gets or sets the DNI (National Identity Documen) of the user.
     /// </summary>
     public string DNI
     {

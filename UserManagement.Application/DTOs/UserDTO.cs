@@ -28,7 +28,7 @@ public class UserDTO : NotificableDTO
     public required string Email { get; set; }
 
     /// <summary>
-    /// Gets or sets the DNI (Documento Nacional de Identidad) of the user.
+    /// Gets or sets the DNI (National Identity Document) of the user.
     /// </summary>
     public required string DNI { get; set; }
 }

@@ -8,19 +8,9 @@ namespace UserManagement.Infrastructure.Data.Repositories;
 /// <summary>
 /// Provides data access operations for the <see cref="User"/> entity.
 /// </summary>
-public class UserRepository : IUserRepository
+/// <param name="userDbContext">The database context for user-related entities.</param>
+public class UserRepository(IUserDbContext userDbContext) : IUserRepository
 {
-    private readonly IUserDbContext userDbContext;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="UserRepository"/> class with the specified database context.
-    /// </summary>
-    /// <param name="userDbContext">The database context for user-related entities.</param>
-    public UserRepository(IUserDbContext userDbContext)
-    {
-        this.userDbContext = userDbContext ?? throw new ArgumentNullException(nameof(userDbContext));
-    }
-
     /// <inheritdoc/>
     public IUnitOfWork UnitOfWork => userDbContext;
 

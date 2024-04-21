@@ -25,7 +25,6 @@ public class UserService(
         // Validate is not double
         var matchedUser = await userRepository.FindByDniAsync(newUser.DNI);
 
-
         if (matchedUser is not null)
         {
             userDTO.ReportError(NotificationType.UserExistWithSameDni);
