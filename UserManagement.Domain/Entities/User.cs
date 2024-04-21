@@ -68,6 +68,17 @@ public class User
         }
     }
 
+    public override bool Equals(object? obj)
+    {
+        if (obj is null) return false;
+
+        if (Id.Equals(((User)obj!).Id)) return true;
+
+        if (DNI.Equals(((User)obj!).DNI, StringComparison.InvariantCulture)) return true;
+
+        return false;
+    }
+
     private bool IsValidEmail(string email)
         => Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
 

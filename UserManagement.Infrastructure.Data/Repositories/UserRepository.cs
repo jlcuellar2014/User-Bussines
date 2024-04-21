@@ -1,4 +1,5 @@
-﻿using UserManagement.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using UserManagement.Domain.Entities;
 using UserManagement.Domain.Repositories;
 using UserManagement.Infrastructure.Data.DbContexts;
 
@@ -9,4 +10,7 @@ public class UserRepository(IUserDbContext userDbContext) : IUserRepository
 
     public async Task AddAsync(User user)
         => await userDbContext.Users.AddAsync(user);
+
+    public async Task<User?> FindByDniAsync(string dni)
+        => await userDbContext.Users.FirstOrDefaultAsync(u => u.DNI.Equals(dni, StringComparison.InvariantCulture));
 }
