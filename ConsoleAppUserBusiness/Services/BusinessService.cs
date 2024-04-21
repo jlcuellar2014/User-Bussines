@@ -4,7 +4,8 @@ using ConsoleAppUserBusiness.DTOs;
 
 namespace BusinessBusinessConsoleApp.Services;
 
-public class BusinessService(HttpClient httpClient)
+public class 
+    BusinessService(HttpClient httpClient)
 {
     public async Task<bool> RegisterBusinessAsync(BusinessDTO businessDTO)
     {

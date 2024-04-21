@@ -43,7 +43,7 @@ namespace BusinessManagement.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Businesss");
+                    b.ToTable("Business");
                 });
 #pragma warning restore 612, 618
         }

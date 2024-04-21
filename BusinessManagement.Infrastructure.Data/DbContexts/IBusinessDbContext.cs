@@ -11,5 +11,5 @@ public interface IBusinessDbContext : IUnitOfWork
     /// <summary>
     /// Gets or sets the <see cref="DbSet{TEntity}"/> for the <see cref="Business"/> entity.
     /// </summary>
-    DbSet<Business> Businesss { get; set; }
+    DbSet<Business> Business { get; set; }
 }

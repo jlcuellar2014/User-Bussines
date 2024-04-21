@@ -19,7 +19,8 @@ public class Program
         {
             Console.WriteLine("An error occurred while registering the user data.");
 
-            Environment.Exit(1);
+            Console.ReadLine();
+            Environment.Exit(0);
         }
 
         var wasRegister = RegisterBusiness(userId.Value);
@@ -28,7 +29,8 @@ public class Program
         {
             Console.WriteLine("An error occurred while registering the business data.");
 
-            Environment.Exit(1);
+            Console.ReadLine();
+            Environment.Exit(0);
         }
 
         Console.Clear();
@@ -45,16 +47,16 @@ public class Program
 
         while (true)
         {
-            Console.WriteLine("Name:");
+            Console.WriteLine("- Name:");
             var name = Console.ReadLine();
 
-            Console.WriteLine("Last Name:");
+            Console.WriteLine("- Last Name:");
             var lastName = Console.ReadLine();
 
-            Console.WriteLine("Email:");
+            Console.WriteLine("- Email:");
             var email = Console.ReadLine();
 
-            Console.WriteLine("DNI:");
+            Console.WriteLine("- DNI:");
             var dni = Console.ReadLine();
 
             userData = new UserDTO
@@ -86,16 +88,16 @@ public class Program
 
         while (true)
         {
-            Console.WriteLine("Name:");
+            Console.WriteLine("- Name:");
             var name = Console.ReadLine();
 
-            Console.WriteLine("Phone:");
+            Console.WriteLine("- Phone:");
             var phone = Console.ReadLine();
 
-            Console.WriteLine("Address:");
+            Console.WriteLine("- Address:");
             var address = Console.ReadLine();
 
-            Console.WriteLine("CIF:");
+            Console.WriteLine("- CIF:");
             var cif = Console.ReadLine();
 
             businessData = new BusinessDTO

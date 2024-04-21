@@ -17,6 +17,6 @@ public class BusinessRepository(IBusinessDbContext businessDbContext)
     /// <inheritdoc/>
     public async Task AddAsync(Business business)
     {
-        await businessDbContext.Businesss.AddAsync(business);
+        await businessDbContext.Business.AddAsync(business);
     }
 }

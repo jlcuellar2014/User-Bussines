@@ -11,7 +11,7 @@ namespace BusinessManagement.Infrastructure.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Businesss",
+                name: "Business",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -24,7 +24,7 @@ namespace BusinessManagement.Infrastructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Businesss", x => x.Id);
+                    table.PrimaryKey("PK_Business", x => x.Id);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace BusinessManagement.Infrastructure.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Businesss");
+                name: "Business");
         }
     }
 }

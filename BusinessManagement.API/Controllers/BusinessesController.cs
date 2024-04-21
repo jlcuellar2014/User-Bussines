@@ -11,7 +11,7 @@ namespace BusinessManagement.API.Controllers;
 /// Controller for managing business-related operations.
 /// </summary>
 /// <param name="businessService">The service responsible for business-related operations.</param>
-/// <param name="logger">The logger used for logging in the BusinesssController.</param>
+/// <param name="logger">The logger used for logging in the BusinessController.</param>
 [ApiController]
 [Route("api/[controller]")]
 public class BusinessesController(
@@ -38,7 +38,7 @@ public class BusinessesController(
 
         if (createdBusiness.IsValid)
         {
-            return TypedResults.Created($"api/businesss/{createdBusiness.Id}");
+            return TypedResults.Created($"api/business/{createdBusiness.Id}");
         }
 
         logger.LogError("There are errors in the request: {@errorList}.", createdBusiness.Notifications);

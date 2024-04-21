@@ -18,7 +18,7 @@ public class BusinessDbContext : DbContext, IBusinessDbContext
     }
 
     /// <inheritdoc/>>
-    public DbSet<Business> Businesss { get; set; }
+    public DbSet<Business> Business { get; set; }
 
     /// <inheritdoc/>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
