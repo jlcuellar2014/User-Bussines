@@ -26,4 +26,11 @@ public abstract class NotificableDTO
         var notification = notifications.First(n => n.NotificationType.Equals(notificationType));
         Notifications.Add(notification);
     }
+
+    /// <summary>
+    /// Gets a concatenated string containing notification messages.
+    /// </summary>
+    /// <returns>A string containing notification messages concatenated together.</returns>
+    public string GetNotificationMessages()
+        => string.Join(" ", Notifications.Select(n => n.Message));
 }

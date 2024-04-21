@@ -12,5 +12,5 @@ public class UserRepository(IUserDbContext userDbContext) : IUserRepository
         => await userDbContext.Users.AddAsync(user);
 
     public async Task<User?> FindByDniAsync(string dni)
-        => await userDbContext.Users.FirstOrDefaultAsync(u => u.DNI.Equals(dni, StringComparison.InvariantCulture));
+        => await userDbContext.Users.FirstOrDefaultAsync(u => u.DNI.Equals(dni.ToUpper()));
 }

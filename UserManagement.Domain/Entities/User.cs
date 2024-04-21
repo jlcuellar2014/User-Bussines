@@ -4,6 +4,9 @@ using CommunityToolkit.Diagnostics;
 
 namespace UserManagement.Domain.Entities;
 
+/// <summary>
+/// Represents a user entity with properties such as name, last name, email, and DNI (Documento Nacional de Identidad).
+/// </summary>
 public class User
 {
     private string name;
@@ -11,52 +14,55 @@ public class User
     private string email;
     private string dni;
 
-    [SetsRequiredMembers]
-    public User(string name, string lastName, string email, string dni)
-    {
-        this.Name = name;
-        this.LastName = lastName;
-        this.Email = email;
-        this.DNI = dni;
-    }
-
+    /// <summary>
+    /// Gets the unique identifier of the user.
+    /// </summary>
     public int Id { get; private set; }
 
-    public required string Name
+    /// <summary>
+    /// Gets or sets the name of the user.
+    /// </summary>
+    public string Name
     {
         get => name;
         set
         {
             Guard.IsNotNullOrWhiteSpace(value);
-
             name = value;
         }
     }
 
-    public required string LastName
+    /// <summary>
+    /// Gets or sets the last name of the user.
+    /// </summary>
+    public string LastName
     {
         get => lastName;
         set
         {
             Guard.IsNotNullOrWhiteSpace(value);
-
             lastName = value;
         }
     }
 
-    public required string Email
+    /// <summary>
+    /// Gets or sets the email address of the user.
+    /// </summary>
+    public string Email
     {
         get => email;
         set
         {
             Guard.IsNotNullOrWhiteSpace(value);
             Guard.IsTrue(IsValidEmail(value));
-
             email = value;
         }
     }
 
-    public required string DNI
+    /// <summary>
+    /// Gets or sets the DNI (Documento Nacional de Identidad) of the user.
+    /// </summary>
+    public string DNI
     {
         get => dni;
         set
@@ -64,10 +70,13 @@ public class User
             Guard.IsNotNullOrWhiteSpace(value);
             Guard.IsTrue(IsValidDni(value));
 
-            dni = value;
+            dni = value.ToUpper();
         }
     }
 
+    /// <summary>
+    /// Determines whether the specified object is equal to the current user instance.
+    /// </summary>
     public override bool Equals(object? obj)
     {
         if (obj is null) return false;
@@ -85,3 +94,4 @@ public class User
     private bool IsValidDni(string dni)
         => Regex.IsMatch(dni, @"^\d{8}[A-Za-z]$");
 }
+

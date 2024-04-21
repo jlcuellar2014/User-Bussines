@@ -7,8 +7,8 @@ using Microsoft.Extensions.Logging;
 
 namespace UserManagement.Application.Services;
 public class UserService(
-    IUserRepository userRepository,
-    ILogger<UserService> logger)
+        IUserRepository userRepository,
+        ILogger<UserService> logger)
     : IUserService
 {
     public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
@@ -16,7 +16,8 @@ public class UserService(
         var newUser = userDTO.Adapt<User>();
 
         // Validate is not double
-        var matchedUser = userRepository.FindByDniAsync(newUser.DNI);
+        var matchedUser = await userRepository.FindByDniAsync(newUser.DNI);
+
 
         if (matchedUser is not null)
         {

@@ -12,10 +12,13 @@ public static class DbContextExtensions
         Guard.IsNotEmpty(connectionString);
         Guard.IsNotWhiteSpace(connectionString);
 
-        services.AddDbContext<IUserDbContext, UserDbContext>(options =>
-        {
-            options.UseSqlite(connectionString);
-        });
+        services.AddDbContext<IUserDbContext, UserDbContext>(
+            options =>
+            {
+                options.UseSqlite(
+                    connectionString,
+                    sqliteOptions => sqliteOptions.MigrationsAssembly("UserManagement.Infrastructure.Data"));
+            }, ServiceLifetime.Scoped);
 
         return services;
     }
