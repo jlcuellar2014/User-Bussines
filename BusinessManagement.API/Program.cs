@@ -1,4 +1,10 @@
+using BusinessManagement.API.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddBusinessDbContext(builder.Configuration.GetConnectionString("SQLite"));
+builder.Services.AddRepositories();
+builder.Services.AddServices();
 
 // Add services to the container.
 
@@ -23,3 +29,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program();
