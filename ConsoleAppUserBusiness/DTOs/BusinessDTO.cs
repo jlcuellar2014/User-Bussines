@@ -1,15 +1,10 @@
-﻿namespace UserBusinessConsoleApp.DTOs;
+﻿namespace ConsoleAppUserBusiness.DTOs;
 
 /// <summary>
 /// Represents a DTO (Data Transfer Object) for a business, capable of handling notifications.
 /// </summary>
 public class BusinessDTO
 {
-    /// <summary>
-    /// Gets or sets the ID of the business.
-    /// </summary>
-    public int Id { get; set; }
-
     /// <summary>
     /// Gets or sets the ID of the business owner.
     /// </summary>
