@@ -8,9 +8,9 @@ public static class DbContextExtensions
 {
     public static IServiceCollection AddUserDbContext(this IServiceCollection services, string? connectionString)
     {
-        Guard.IsNull(connectionString);
-        Guard.IsEmpty(connectionString!);
-        Guard.IsWhiteSpace(connectionString!);
+        Guard.IsNotNull(connectionString);
+        Guard.IsNotEmpty(connectionString);
+        Guard.IsNotWhiteSpace(connectionString);
 
         services.AddDbContext<IUserDbContext, UserDbContext>(options =>
         {
