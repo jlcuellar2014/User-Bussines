@@ -9,17 +9,17 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Businness.API/Businness.API.csproj", "Businness.API/"]
-RUN dotnet restore "./Businness.API/Businness.API.csproj"
+COPY ["BusinessManagement.API/BusinessManagement.API.csproj", "BusinessManagement.API/"]
+RUN dotnet restore "./BusinessManagement.API/BusinessManagement.API.csproj"
 COPY . .
-WORKDIR "/src/Businness.API"
-RUN dotnet build "./Businness.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/BusinessManagement.API"
+RUN dotnet build "./BusinessManagement.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Businness.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./BusinessManagement.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Businness.API.dll"]
+ENTRYPOINT ["dotnet", "BusinessManagement.API.dll"]

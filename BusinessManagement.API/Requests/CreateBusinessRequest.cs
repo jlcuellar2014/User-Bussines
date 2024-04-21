@@ -11,6 +11,7 @@ public class CreateBusinessRequest
     /// Gets the unique identifier of the business owner.
     /// </summary>
     [Required(ErrorMessage = "The business owner ID is required.")]
+    [Range(1, int.MaxValue)]
     public required int UserId { get; set; }
 
     /// <summary>
