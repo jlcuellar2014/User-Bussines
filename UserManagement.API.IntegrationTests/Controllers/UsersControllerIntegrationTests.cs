@@ -7,7 +7,7 @@ using UserManagement.Domain.Entities;
 namespace UserManagement.API.IntegrationTests.Controllers;
 
 [TestFixture]
-public class UsersControllerIntegrationTests : UserBaseIntegrationTest
+public class UsersControllerIntegrationTests : UserManagementBaseIntegrationTest
 {
     [Test]
     public async Task WhenCreateUserWhidValidDataAndReturnCreateMessage()

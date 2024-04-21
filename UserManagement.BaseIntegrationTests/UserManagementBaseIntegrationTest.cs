@@ -4,7 +4,7 @@ using UserManagement.Infrastructure.Data.DbContexts;
 
 namespace UserManagement.BaseIntegrationTests;
 
-public class UserBaseIntegrationTest
+public class UserManagementBaseIntegrationTest
 {
     protected UserManagementWebApplicationFactory UserAPI { get; private set; } = null!;
 
