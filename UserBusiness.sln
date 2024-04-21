@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessManagement.Domain",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessManagement.Infrastructure.Data", "BusinessManagement.Infrastructure.Data\BusinessManagement.Infrastructure.Data.csproj", "{67ACF976-6ABB-4D6D-9237-01F196643F80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Application.UnitTests", "UserManagement.Application.UnitTests\UserManagement.Application.UnitTests.csproj", "{73385F85-8C8A-405E-8FB5-ABF41EADC059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{67ACF976-6ABB-4D6D-9237-01F196643F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67ACF976-6ABB-4D6D-9237-01F196643F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67ACF976-6ABB-4D6D-9237-01F196643F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73385F85-8C8A-405E-8FB5-ABF41EADC059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73385F85-8C8A-405E-8FB5-ABF41EADC059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73385F85-8C8A-405E-8FB5-ABF41EADC059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73385F85-8C8A-405E-8FB5-ABF41EADC059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{CDDA329C-164F-46D5-94A1-CA965FE160C0} = {6A6DB19B-0CE7-4B6E-8CE2-472F463CE5D9}
 		{696C4862-25DF-4C14-8BB0-8D9EC83D8EA6} = {6A6DB19B-0CE7-4B6E-8CE2-472F463CE5D9}
 		{67ACF976-6ABB-4D6D-9237-01F196643F80} = {6A6DB19B-0CE7-4B6E-8CE2-472F463CE5D9}
+		{73385F85-8C8A-405E-8FB5-ABF41EADC059} = {857EEDC4-EFF0-495A-A393-00BDECF9FFF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D44528BA-0292-465D-A0A4-AEDBAA4C531D}

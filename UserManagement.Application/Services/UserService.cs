@@ -6,11 +6,18 @@ using UserManagement.Application.DTOs.Notifications;
 using Microsoft.Extensions.Logging;
 
 namespace UserManagement.Application.Services;
+
+/// <summary>
+/// Service for managing user-related operations.
+/// </summary>
+/// <param name="userRepository">The repository used for accessing user data.</param>
+/// <param name="logger">The logger used for logging in the UserService.</param>
 public class UserService(
         IUserRepository userRepository,
         ILogger<UserService> logger)
     : IUserService
 {
+    /// <inheritdoc/>>
     public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
     {
         var newUser = userDTO.Adapt<User>();

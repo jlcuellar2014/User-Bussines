@@ -3,12 +3,20 @@ using UserManagement.Infrastructure.Data.Repositories;
 
 namespace UserManagement.API.Extensions;
 
+/// <summary>
+/// Extension methods for adding repositories to the service collection.
+/// </summary>
 public static class RepositoryExtensions
 {
-    public static IServiceCollection AddRepositories(this IServiceCollection Repositorys)
+    /// <summary>
+    /// Adds user repositories to the service collection.
+    /// </summary>
+    /// <param name="repositories">The service collection to which the user repositories will be added.</param>
+    /// <returns>The modified service collection.</returns>
+    public static IServiceCollection AddRepositories(this IServiceCollection repositories)
     {
-        Repositorys.AddScoped<IUserRepository, UserRepository>();
+        repositories.AddScoped<IUserRepository, UserRepository>();
 
-        return Repositorys;
+        return repositories;
     }
 }
